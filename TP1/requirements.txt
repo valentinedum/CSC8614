@@ -2,3 +2,4 @@ transformers
 torch
 plotly
 scikit-learn
+pandas
