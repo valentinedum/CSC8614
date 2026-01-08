@@ -21,6 +21,8 @@ for tid in token_ids:
     txt = tokenizer.decode([tid])
     print(tid, repr(txt))
 
+### ------------------------------------------------
+
 # TODO: extraire uniquement les tokens correspondant au mot long (optionnel mais recommandé)
 long_word = "antidisestablishmentarianism"
 long_word_tokens = tokenizer.tokenize(long_word)
