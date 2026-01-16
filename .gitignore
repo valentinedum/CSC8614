@@ -10,4 +10,5 @@ env/
 # Fichiers volumineux
 gpt2_weights/
 *.csv
-
+admin_pdfs/
+emails/
