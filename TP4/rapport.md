@@ -134,3 +134,50 @@ Ici, contrairement à la question avec Benedetto, le RAG comprend qu'il n'a abso
 
 ## Exercice 6 : Évaluation : créer un mini dataset de questions + mesurer Recall@k + analyse d’erreurs
 
+### Evaluation recall
+
+Maintenant, nous allons créer un mini dataset `TP4/eval/questions.json` comprenant des questions sur le PFE, d'autres sur des règles générales à tsp ou encore d'autres dont la réponse est dans les mails. 
+![questions_eval](./img/Capture%20d’écran%202026-01-16%20143829.png)
+
+Nous allons évaluer le RAG sur ce dataset avec un script `TP4/eval_recall.py`.
+
+![eval_1](./img/Capture%20d’écran%202026-01-16%20145900.png)
+![eval_2](./img/Capture%20d’écran%202026-01-16%20144304.png)
+
+**Interprétation** : Le score est quasi parfait avec 86% de hit. Le RAG n'a pas trouvé là où les informations sont un peu plus floues. Par exemple, dans les mails, il y des propositions de salon pour trouver un stage etc, mais je ne crois pas avoir vu le mot "offre". Pour la question sur l'admission à télécom sudparis. Peut être que dans les documents, il ne parle pas d'admis mais plutot d'admission.
+
+### Evaluation qualitative
+
+Nous allons zoomer sur ce que trouve le RAG, pour 3 de ces questions. Avec les questions `q3`, `q4` et `q12`.
+
+#### Question `q3`
+![rag_example3](./img/Capture%20d’écran%202026-01-17%20162316.png)
+
+Ici, on peut lui donner l'excellent score de 2. Le RAG a cherché la bonne information présente dans les mails. Tout était vrai et les sources sont bonnes. 
+
+#### Question `q4`
+![rag_example3](./img/Capture%20d’écran%202026-01-17%20162512.png)
+
+Pour cette question, le RAG a identifié le document du reglement intérieur qui doit parler de rinnoes mais ne trouve pas le mail qui en parle. Il nous dit de contacter le directeur de l'école, ce qui est faux. On lui donne une note de 0.
+
+**Analyse erreur**: Ici c'est surement un échec de retrieval. Il récupère des PDF au lieu d'un email. Peut-etre que les chunks sont encore trop long donc trop générique
+
+**Pistes améliorations**: On propose d'augmenter le top_k pour capturer plus de diversité, de diminuer le chunk pour être plus spécifique et de filtrer en amont les résultats par type de documents.
+
+
+#### Question `q12`
+![rag_example12](./img/Capture%20d’écran%202026-01-17%20161903.png)
+
+On peut lui donner un score de 1. Le rag est allé chercher des infos pertinentes au bon endroit mais a un peu halluciné. En effet, il y a 3 stage à réaliser mais un chaque année et on a la possibilité de la faire en recherche ou pour la création d'une entreprise. Donc, il y a quelques confusions. 
+
+**Analyse erreur**: Ici c'est surement un échec de génération. Peut-etre que les chunks sont encore trop long, ce qui créé du bruit.
+
+**Pistes améliorations**: On propose de renforcer le prompt qui est surement pas assez spécifique en appliquant. Réduire le chunk size pour les mêmes raisons.
+
+
+**Ce qui est fait une note moyenne de 1/2 sur ces 3 questions**
+
+## Conclusion
+
+La pipeline RAG a bien fonctionné que les questions au contexte clair atteignant un recall de `86%` et générant des réponses en français avec citations. Cependant, la principale limite rencontrée a été l'hallucination lors de la génération, due à un prompt insuffisant et des chunks trop long, créant du bruit.
+Si nous devions déployer ce modèle, la priorité serait d'optimiser la statégie d'indexation avec des chunks plus fin et d'ajouter un filtre par type de documents pour améliorer le rétrieval et réduire les erreurs en amont.

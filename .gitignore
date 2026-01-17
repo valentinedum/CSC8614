@@ -12,3 +12,4 @@ gpt2_weights/
 *.csv
 admin_pdfs/
 emails/
+cache/

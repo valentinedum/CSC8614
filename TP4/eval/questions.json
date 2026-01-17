@@ -1,0 +1,72 @@
+[
+    {
+        "id": "q1",
+        "question": "Quels sont les sujets de PFE supplémentaires proposés par Luca Benedetto ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q2",
+        "question": "Comment valider une UE ?",
+        "expected_doc_type": "admin_pdf"
+    },
+    {
+        "id": "q3",
+        "question": "Qu'est-t-il arrivé à la restauration du campus?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q4",
+        "question": "Quand faut-il soumettre la vidéo RINNOES ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q5",
+        "question": "Quel est le délai pour soumettre une demande de dérogation aux examens ?",
+        "expected_doc_type": "admin_pdf"
+    },
+    {
+        "id": "q6",
+        "question": "Comment faut-il changer son mot de passe Foodi ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q7",
+        "question": "Comment doit-on utiliser l'IA à l'IMT ?",
+        "expected_doc_type": "admin_pdf"
+    },
+    {
+        "id": "q8",
+        "question": "Y a-t-il des événements prévus pour la semaine prochaine sur le campus ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q9",
+        "question": "Comment être admis à Télécom SudParis?",
+        "expected_doc_type": "admin_pdf"
+    },
+    {
+        "id": "q10",
+        "question": "Y a-t-il des offres de stages, en ce moment ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q11",
+        "question": "Sait-on des informations à propos du rapport de fin d'études en entreprise ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q12",
+        "question": "Quels sont les différents stages à réaliser lors du cursus à TSP ?",
+        "expected_doc_type": "admin_pdf"
+    },
+    {
+        "id": "q13",
+        "question": "Quels sujets sont possibles pour le PFE ?",
+        "expected_doc_type": "email"
+    },
+    {
+        "id": "q15",
+        "question": "Quels sont les services de soutien disponibles pour les étudiants à l'IMT ?",
+        "expected_doc_type": "admin_pdf"
+    }
+]
