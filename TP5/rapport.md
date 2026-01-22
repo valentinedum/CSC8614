@@ -120,3 +120,9 @@ Nous testons cette redirection avec `TP5/test_graph_minimal.py`
 ![retrieve_2](./img/Capture%20d’écran%202026-01-22%20112935.png)
 
 Le code de redirection a bien marché, on est passé par le noeud **maybe_retrieve**. Toutefois, le retieval_query est vide peut importe le mail.
+
+## Exercice 7 : Génération : rédiger une réponse institutionnelle avec citations (remplacer le stub reply)
+
+Nous allons à présent remplacer notre stub reply par un draft reply `TP5/agent/nodes/draft_reply.py`. Ce nœud doit produire une réponse propre, actionnable, et avec citations qui pointent vers les doc_i présents dans state.evidence
+
+Nous testons le graph minimal sur plusieurs mais mais obtenons à chaque fois **no evidence**

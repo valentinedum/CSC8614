@@ -11,13 +11,13 @@ from TP5.agent.nodes.stubs import (
     stub_ignore,
 )
 from TP5.agent.nodes.maybe_retrieve import maybe_retrieve
-
+from TP5.agent.nodes.draft_reply import draft_reply
 
 def build_graph():
     g = StateGraph(AgentState)
 
     g.add_node("classify_email", classify_email)
-    g.add_node("reply", stub_reply)
+    g.add_node("reply", draft_reply)
     g.add_node("ask_clarification", stub_ask_clarification)
     g.add_node("escalate", stub_escalate)
     g.add_node("ignore", stub_ignore)

@@ -1,0 +1,6 @@
+{"run_id": "fe8301f7-e623-4f49-95aa-a5647a6341ef", "ts": "2026-01-22T17:41:32.592012Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E09"}}
+{"run_id": "fe8301f7-e623-4f49-95aa-a5647a6341ef", "ts": "2026-01-22T17:41:35.373931Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "The email appears to be a phishing attempt. Ignoring the request and notifying security team."}}}
+{"run_id": "fe8301f7-e623-4f49-95aa-a5647a6341ef", "ts": "2026-01-22T17:41:35.374892Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "fe8301f7-e623-4f49-95aa-a5647a6341ef", "ts": "2026-01-22T17:41:35.375000Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "fe8301f7-e623-4f49-95aa-a5647a6341ef", "ts": "2026-01-22T17:41:35.375385Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "fe8301f7-e623-4f49-95aa-a5647a6341ef", "ts": "2026-01-22T17:41:35.375480Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
