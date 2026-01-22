@@ -14,13 +14,13 @@ from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_core.documents import Document
 
-CHROMA_DIR = os.path.join("TP4", "chroma_db")
-COLLECTION_NAME = "tp4_rag"
+CHROMA_DIR = os.path.join("TP5", "chroma_db")
+COLLECTION_NAME = "tp5_rag"
 
 EMBEDDING_MODEL = "nomic-embed-text"
 LLM_MODEL = "mistral"
 TOP_K = 5
-PORT = "11434"  # 11434 par défaut
+PORT = "11500"  # 11434 par défaut
 
 def format_context(docs: List[Document]) -> str:
     """
