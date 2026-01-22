@@ -1,0 +1,6 @@
+{"run_id": "e2e51bad-aacc-42a9-bd3f-77cd5cb08895", "ts": "2026-01-22T10:25:52.327795Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E04"}}
+{"run_id": "e2e51bad-aacc-42a9-bd3f-77cd5cb08895", "ts": "2026-01-22T10:25:55.146438Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Reply to Alice's question about the backpropagation formula and ReLU activation function."}}}
+{"run_id": "e2e51bad-aacc-42a9-bd3f-77cd5cb08895", "ts": "2026-01-22T10:25:55.148344Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "e2e51bad-aacc-42a9-bd3f-77cd5cb08895", "ts": "2026-01-22T10:25:55.148595Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "e2e51bad-aacc-42a9-bd3f-77cd5cb08895", "ts": "2026-01-22T10:25:55.149620Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "e2e51bad-aacc-42a9-bd3f-77cd5cb08895", "ts": "2026-01-22T10:25:55.150091Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

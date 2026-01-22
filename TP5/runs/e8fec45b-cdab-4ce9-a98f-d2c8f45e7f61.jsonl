@@ -1,0 +1,4 @@
+{"run_id": "e8fec45b-cdab-4ce9-a98f-d2c8f45e7f61", "ts": "2026-01-22T09:53:27.282592Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "e8fec45b-cdab-4ce9-a98f-d2c8f45e7f61", "ts": "2026-01-22T09:53:50.055686Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email de confirmation d'inscription administrative pour l'année universitaire 2025-2026. Aucune information sensible n'a été révélée."}}}
+{"run_id": "e8fec45b-cdab-4ce9-a98f-d2c8f45e7f61", "ts": "2026-01-22T09:53:50.059501Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "e8fec45b-cdab-4ce9-a98f-d2c8f45e7f61", "ts": "2026-01-22T09:53:50.059956Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

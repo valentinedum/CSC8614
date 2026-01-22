@@ -14,8 +14,8 @@ from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_core.documents import Document
 
-CHROMA_DIR = os.path.join("TP5", "chroma_db")
-COLLECTION_NAME = "tp5_rag"
+CHROMA_DIR = os.path.join("TP4", "chroma_db")
+COLLECTION_NAME = "tp4_rag"
 
 EMBEDDING_MODEL = "nomic-embed-text"
 LLM_MODEL = "mistral"

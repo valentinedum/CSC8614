@@ -1,0 +1,6 @@
+{"run_id": "fe75b790-db75-4380-a8c3-df1bd9b88e7a", "ts": "2026-01-22T10:25:22.007469Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E05"}}
+{"run_id": "fe75b790-db75-4380-a8c3-df1bd9b88e7a", "ts": "2026-01-22T10:25:30.051843Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "The email concerns a project update meeting, which does not require immediate action and has low risk."}}}
+{"run_id": "fe75b790-db75-4380-a8c3-df1bd9b88e7a", "ts": "2026-01-22T10:25:30.054650Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "fe75b790-db75-4380-a8c3-df1bd9b88e7a", "ts": "2026-01-22T10:25:30.055050Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "fe75b790-db75-4380-a8c3-df1bd9b88e7a", "ts": "2026-01-22T10:25:30.056408Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "fe75b790-db75-4380-a8c3-df1bd9b88e7a", "ts": "2026-01-22T10:25:30.056711Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

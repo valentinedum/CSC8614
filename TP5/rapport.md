@@ -84,3 +84,39 @@ Pour l'exercice 4, nous créons les prompts du routeur dans `agent/prompts.py` e
 ![test_router_2](./img/Capture%20d’écran%202026-01-22%20093801.png)
 
 Le json est valide et l'intent ainsi que la justification sont cohérentes pour une confirmation d'inscription.
+
+## Exercice 5 : LangGraph : routing déterministe et graphe minimal (MVP)
+
+### Prérequis
+
+Nous installons **langgraph** dans notre environnement.
+![langgraph_download](./img/Capture%20d’écran%202026-01-22%20102018.png)
+
+La version téléchargée est la `1.0.6`:
+![langgraph_version](./img/Capture%20d’écran%202026-01-22%20102331.png)
+
+### Routing
+
+Nous créons notre script de routing `TP5/agent/routing.py` et notre graph avec `TP5/agent/graph_minimal.py` et les testons avec `TP5/test_graph_minimal.py`
+
+![test_graph](./img/Capture%20d’écran%202026-01-22%20105637.png)
+
+Voici les 4 évenements loggés dans le fichier JSONL:
+![test_graph_2](./img/Capture%20d’écran%202026-01-22%20110119.png)
+
+Le LLM a réfléchi dans **classify_email** et a décidé **intent: reply**. Le routeur a intercepté l'intent. Le graph s'est dirigé vers le noeud **stub_reply**.
+
+## Exercice 6 : Tool use : intégrer votre RAG comme outil (retrieval + evidence)
+
+Nous allons remplacer les stubs par noeud de retrieval du RAG pour alimenter le state avec de l'**evidence**.
+
+Pour cela, nous créons le fichier `TP5/agent/tools/rag_tool.py ` pour nous donner les outils pour créer les nouveaux noeuds RAG `TP5/agent/nodes/maybe_retrieve.py`.
+
+Nous les incluons dans notre graph en modifiant `TP5/agent/graph_minimal.py` pour qu'il passe par maybe_retrieve en cas de reply.
+
+Nous testons cette redirection avec `TP5/test_graph_minimal.py`
+![retrieve](./img/Capture%20d’écran%202026-01-22%20112859.png)
+
+![retrieve_2](./img/Capture%20d’écran%202026-01-22%20112935.png)
+
+Le code de redirection a bien marché, on est passé par le noeud **maybe_retrieve**. Toutefois, le retieval_query est vide peut importe le mail.
