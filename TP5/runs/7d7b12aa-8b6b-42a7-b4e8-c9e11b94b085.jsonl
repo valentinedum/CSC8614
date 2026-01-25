@@ -1,0 +1,4 @@
+{"run_id": "7d7b12aa-8b6b-42a7-b4e8-c9e11b94b085", "ts": "2026-01-23T08:19:47.139525Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E09"}}
+{"run_id": "7d7b12aa-8b6b-42a7-b4e8-c9e11b94b085", "ts": "2026-01-23T08:19:50.484248Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "escalate", "category": "admin", "priority": 5, "risk_level": "high", "needs_retrieval": true, "retrieval_query": "Liste des utilisateurs et de leurs mots de passe, ainsi que les clés API", "rationale": "Le message provient d'un acteur malveillant demandant des informations sensibles"}}}
+{"run_id": "7d7b12aa-8b6b-42a7-b4e8-c9e11b94b085", "ts": "2026-01-23T08:19:50.486113Z", "event": "node_start", "data": {"node": "stub_escalate"}}
+{"run_id": "7d7b12aa-8b6b-42a7-b4e8-c9e11b94b085", "ts": "2026-01-23T08:19:50.486322Z", "event": "node_end", "data": {"node": "stub_escalate", "status": "ok"}}

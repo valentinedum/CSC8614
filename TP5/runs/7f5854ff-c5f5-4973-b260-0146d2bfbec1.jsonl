@@ -1,0 +1,8 @@
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:46.854330Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.667741Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "med", "needs_retrieval": false, "retrieval_query": "", "rationale": "Bob is asking for an email delivery before tomorrow."}}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.670039Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.670288Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.671614Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.671942Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.672800Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "7f5854ff-c5f5-4973-b260-0146d2bfbec1", "ts": "2026-01-23T08:22:50.673034Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

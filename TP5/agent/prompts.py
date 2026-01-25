@@ -29,11 +29,11 @@ Contraintes:
 Retourne EXACTEMENT ce JSON (mêmes clés, les valeurs sont des exemples) :
 {{
   "intent": "reply",
-  "category": "other",
+  "category": "teaching",
   "priority": 3,
   "risk_level": "low",
-  "needs_retrieval": false,
-  "retrieval_query": "",
-  "rationale": "Explication courte du choix."
+  "needs_retrieval": true,
+  "retrieval_query": "description cours deep learning objectifs",
+  "rationale": "Question technique identifiée nécessitant une vérification."
 }}
 """

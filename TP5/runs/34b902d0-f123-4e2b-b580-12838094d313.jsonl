@@ -1,0 +1,8 @@
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:38:49.482840Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.902121Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Mention of course-related details."}}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.903834Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.904107Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.905228Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.905416Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.905976Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "34b902d0-f123-4e2b-b580-12838094d313", "ts": "2026-01-23T09:39:21.906123Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

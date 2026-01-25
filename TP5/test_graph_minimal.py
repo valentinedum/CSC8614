@@ -7,7 +7,7 @@ from TP5.agent.graph_minimal import build_graph
 
 if __name__ == "__main__":
     emails = load_all_emails()
-    e = emails[8]
+    e = emails[5]
 
     state = AgentState(
         run_id=str(uuid.uuid4()),

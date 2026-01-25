@@ -1,0 +1,8 @@
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:12.438688Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E08"}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:14.995867Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "med", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email concerns personal financial information related to a reimbursement request."}}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:14.998271Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:14.998512Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:14.999743Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:15.000066Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:15.000968Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "fd015ae7-b1cb-4ea0-89f8-75f7f547e283", "ts": "2026-01-23T08:23:15.001173Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

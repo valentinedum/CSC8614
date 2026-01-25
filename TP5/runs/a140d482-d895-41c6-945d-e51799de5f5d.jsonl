@@ -1,0 +1,4 @@
+{"run_id": "a140d482-d895-41c6-945d-e51799de5f5d", "ts": "2026-01-23T08:19:07.072866Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E04"}}
+{"run_id": "a140d482-d895-41c6-945d-e51799de5f5d", "ts": "2026-01-23T08:19:10.895372Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "ask_clarification", "category": "teaching", "priority": 2, "risk_level": "med", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question from student Alice about Deep Learning course content"}}}
+{"run_id": "a140d482-d895-41c6-945d-e51799de5f5d", "ts": "2026-01-23T08:19:10.896440Z", "event": "node_start", "data": {"node": "stub_ask_clarification"}}
+{"run_id": "a140d482-d895-41c6-945d-e51799de5f5d", "ts": "2026-01-23T08:19:10.896564Z", "event": "node_end", "data": {"node": "stub_ask_clarification", "status": "ok"}}

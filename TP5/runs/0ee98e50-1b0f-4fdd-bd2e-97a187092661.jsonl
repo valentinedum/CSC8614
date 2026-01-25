@@ -1,0 +1,7 @@
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:34.138047Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E04"}}
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:36.986582Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "description cours deep learning objectifs", "rationale": "Question identified about the Deep Learning course requiring a verification."}}}
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:36.988466Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:37.208464Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "5af86447634f", "latency_ms": 219, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:37.209322Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:37.209975Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "0ee98e50-1b0f-4fdd-bd2e-97a187092661", "ts": "2026-01-22T18:00:40.619896Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}

@@ -12,6 +12,8 @@ from TP5.agent.nodes.stubs import (
 )
 from TP5.agent.nodes.maybe_retrieve import maybe_retrieve
 from TP5.agent.nodes.draft_reply import draft_reply
+from TP5.agent.nodes.check_evidence import check_evidence
+from TP5.agent.nodes.rewrite_query import rewrite_query
 
 def build_graph():
     g = StateGraph(AgentState)
@@ -22,6 +24,8 @@ def build_graph():
     g.add_node("escalate", stub_escalate)
     g.add_node("ignore", stub_ignore)
     g.add_node("maybe_retrieve", maybe_retrieve)
+    g.add_node("check_evidence", check_evidence)
+    g.add_node("rewrite_query", rewrite_query)
     
 
     g.set_entry_point("classify_email")  # TODO: point d'entrée
@@ -38,9 +42,21 @@ def build_graph():
         },
     )
 
-    # TODO: chaque branche termine le graphe
+    # Branche reply : maybe_retrieve → reply(draft_reply) → check_evidence
     g.add_edge("maybe_retrieve", "reply")
-    g.add_edge("reply", END)
+    g.add_edge("reply", "check_evidence")
+
+    # Branching : evidence_ok ?
+    def after_check(state: AgentState) -> str:
+        if state.evidence_ok:
+            return "end"
+        if state.budget.retrieval_attempts < state.budget.max_retrieval_attempts:
+            return "rewrite"
+        return "end"
+
+
+    # TODO: chaque branche termine le graphe
+    g.add_edge("rewrite_query", "maybe_retrieve")
     g.add_edge("ask_clarification", END)
     g.add_edge("escalate", END)
     g.add_edge("ignore", END)

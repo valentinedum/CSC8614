@@ -15,7 +15,7 @@ On exécute le script avec une question du TP4 :
 
 ### Création dataset
 
-Nous générons un petit dataset à l'aide de Gemini
+Nous générons un petit dataset à l'aide de Claude.
 ![capture répertoire](./img/Capture%20d’écran%202026-01-22%20085708.png)
 
 Notre jeu de test couvre une diversité de situations rencontrées dans la vie universitaire : des emails administratifs (inscription, gestion de résidence), des échanges liés à l’enseignement (notes, questions de cours), des messages de recherche (réunion, soumission d’article), ainsi que des cas plus complexes comme un email ambigu ou des situations à risque (PII, tentative de prompt injection). Cette variété permet de tester la robustesse et la pertinence du système RAG sur des cas réels et critiques.
@@ -125,4 +125,27 @@ Le code de redirection a bien marché, on est passé par le noeud **maybe_retrie
 
 Nous allons à présent remplacer notre stub reply par un draft reply `TP5/agent/nodes/draft_reply.py`. Ce nœud doit produire une réponse propre, actionnable, et avec citations qui pointent vers les doc_i présents dans state.evidence
 
-Nous testons le graph minimal sur plusieurs mais mais obtenons à chaque fois **no evidence**
+Nous testons le graph minimal sur plusieurs mais mais obtenons à chaque fois **no evidence**.
+![draft_wrong](./img/Capture%20d’écran%202026-01-22%20190508.png)
+![draft_wrong_2](./img/Capture%20d’écran%202026-01-22%20190605.png)
+
+### Hypothèse
+Le modèle est trop féneant: il copie l'exemple du prompt. Comme l'exemple dit false, ils mettent false dans needs_retrieval. Du coup, maybe_retrieve voit false et quitte immédiatement (c'est le comportement programmé), donc evidence reste vide, et draft_reply passe en "Safe Mode".
+
+Je vais donc essayé avec comme exemple **true**
+Cette fois-ci le modèle répond à chaque fois avec une evidence. **Le LLM est donc pas très bon ou le prompt pas assez détaillé.**
+![draft_right](./img/Capture%20d’écran%202026-01-22%20190534.png)
+
+![draft_right_1](./img/Capture%20d’écran%202026-01-22%20190717.png)
+
+## Exercice 8 : Boucle contrôlée : réécriture de requête et 2e tentative de retrieval (max 2)
+
+Nous modifions `TP5/agent/state.py` pour ajouter au modèle AgentState les champs suivants :
+- `evidence_ok: bool = False`
+- `last_draft_had_valid_citations: bool = False`
+
+![modif_agent](./img/Capture%20d’écran%202026-01-23%20084735.png)
+
+Nous modifions ensuite `TP5/agent/nodes/draft_reply` pour écrire un signal exploitable.
+
+Pour permettre à l'agent de corriger ses erreurs de recherche, nous avons transformé le pipeline linéaire en une boucle de rétroaction. Le nœud `check_evidence.py` agit comme un évaluateur qui valide la qualité des documents trouvés en vérifiant si le LLM a réussi à générer des citations valides. En cas d'échec, le nœud `rewrite_query.py` utilise un LLM pour reformuler intelligemment la requête de recherche, offrant ainsi à l'agent une seconde chance de trouver l'information pertinente.

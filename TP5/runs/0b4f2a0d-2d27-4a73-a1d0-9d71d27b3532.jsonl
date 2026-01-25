@@ -1,0 +1,9 @@
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:25.938225Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E06"}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:28.879867Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "workshop track details and submission process", "rationale": "Information required for author to submit the paper to the suggested workshop."}}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:28.881818Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:32.016807Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "cb682f415953", "latency_ms": 3134, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:32.017921Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:32.018760Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:35.971479Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:35.973126Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "0b4f2a0d-2d27-4a73-a1d0-9d71d27b3532", "ts": "2026-01-23T09:43:35.973440Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}

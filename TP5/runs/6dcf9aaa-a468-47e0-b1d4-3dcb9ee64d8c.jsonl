@@ -1,0 +1,8 @@
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:31.897071Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.735018Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email confirme inscription administrative pour l'année universitaire 2025-2026"}}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.737102Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.737345Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.738401Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.738682Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.739467Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "6dcf9aaa-a468-47e0-b1d4-3dcb9ee64d8c", "ts": "2026-01-23T08:20:34.739686Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

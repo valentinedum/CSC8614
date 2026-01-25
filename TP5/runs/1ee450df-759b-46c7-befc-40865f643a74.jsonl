@@ -1,0 +1,8 @@
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:53.103531Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E03"}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.312652Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Professeur Tournesol a demandé des notes provisoires pour CSC8614. Il est nécessaire de vérifier si le rapport du groupe 4 a été rendu au format PDF demandé."}}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.315108Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.315449Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.316772Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.317109Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.318090Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "1ee450df-759b-46c7-befc-40865f643a74", "ts": "2026-01-23T09:40:57.318298Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

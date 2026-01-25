@@ -70,9 +70,11 @@ class AgentState(BaseModel):
     decision: Decision = Field(default_factory=Decision)
     retrieval_spec: Optional[RetrievalSpec] = None
     evidence: List[EvidenceDoc] = Field(default_factory=list)
-
+    
+    evidence_ok: bool = False
     draft_v1: str = ""
     draft_v2: str = ""
+    last_draft_had_valid_citations: bool = False
 
     actions: List[Dict[str, Any]] = Field(default_factory=list)   # actions mockées
     errors: List[str] = Field(default_factory=list)
