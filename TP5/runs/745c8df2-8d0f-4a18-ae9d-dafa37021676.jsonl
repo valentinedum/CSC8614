@@ -1,0 +1,7 @@
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:25.261049Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E06"}}
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:28.610470Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "Le document que vous avez demandé sur le cours de deep learning et son objet", "rationale": "Question concernant le document nécessaire pour valider un dossier de l'équipe."}}}
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:28.612796Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:28.820224Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "a68e1cd81dc6", "latency_ms": 207, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:28.821030Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:28.821680Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "745c8df2-8d0f-4a18-ae9d-dafa37021676", "ts": "2026-01-25T18:51:32.385570Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}

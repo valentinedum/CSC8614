@@ -42,7 +42,7 @@ def build_graph():
         },
     )
 
-    # Branche reply : maybe_retrieve → reply(draft_reply) → check_evidence
+    # # Branche reply : maybe_retrieve → reply(draft_reply) → check_evidence
     g.add_edge("maybe_retrieve", "reply")
     g.add_edge("reply", "check_evidence")
 
@@ -54,7 +54,11 @@ def build_graph():
             return "rewrite"
         return "end"
 
-
+    g.add_conditional_edges("check_evidence", after_check, {
+        "end": END,
+        "rewrite": "rewrite_query",
+    })
+    
     # TODO: chaque branche termine le graphe
     g.add_edge("rewrite_query", "maybe_retrieve")
     g.add_edge("ask_clarification", END)

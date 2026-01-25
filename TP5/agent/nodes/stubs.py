@@ -31,7 +31,7 @@ def stub_ignore(state: AgentState) -> AgentState:
     log_event(state.run_id, "node_start", {"node": "stub_ignore"})
     state.actions.append({
         "type": "ignore",
-        "reason": "[STUB] Message ignoré.",  # TODO: raison courte (ex: hors périmètre)
+        "reason": "[STUB] Message ignoré. ",  # TODO: raison courte (ex: hors périmètre)
     })
     log_event(state.run_id, "node_end", {"node": "stub_ignore", "status": "ok"})
     return state

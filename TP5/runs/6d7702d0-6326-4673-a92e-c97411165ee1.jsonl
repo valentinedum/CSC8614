@@ -1,0 +1,8 @@
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:58:52.171543Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.221210Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email demandant de mettre à jour les coordonnées personnelles pour le registre administratif."}}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.223846Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.224136Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.225291Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.225773Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.226661Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "6d7702d0-6326-4673-a92e-c97411165ee1", "ts": "2026-01-25T18:59:02.227013Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

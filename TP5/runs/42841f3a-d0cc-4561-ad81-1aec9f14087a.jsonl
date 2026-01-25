@@ -1,0 +1,4 @@
+{"run_id": "42841f3a-d0cc-4561-ad81-1aec9f14087a", "ts": "2026-01-25T18:39:58.851516Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "42841f3a-d0cc-4561-ad81-1aec9f14087a", "ts": "2026-01-25T18:40:08.553460Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question concernant le badge d'accès au campus."}}}
+{"run_id": "42841f3a-d0cc-4561-ad81-1aec9f14087a", "ts": "2026-01-25T18:40:08.556001Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "42841f3a-d0cc-4561-ad81-1aec9f14087a", "ts": "2026-01-25T18:40:08.556372Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

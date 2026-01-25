@@ -1,0 +1,7 @@
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:04.630271Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:07.211883Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "campus access policy for lost badge", "rationale": "Question about campus access policy for a lost badge."}}}
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:07.214076Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:08.652437Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "84acd250f18c", "latency_ms": 1437, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:08.653242Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:08.653956Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "3840d011-ac41-46a6-9f78-35012adbeda1", "ts": "2026-01-25T18:47:15.629974Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}

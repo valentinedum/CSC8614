@@ -1,0 +1,2 @@
+{"run_id": "4c8251e5-a5ba-4f78-8c90-709663a6fabe", "ts": "2026-01-25T18:34:05.552757Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "4c8251e5-a5ba-4f78-8c90-709663a6fabe", "ts": "2026-01-25T18:34:18.742323Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question concernant les accès au campus"}}}

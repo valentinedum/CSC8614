@@ -1,0 +1,6 @@
+{"run_id": "f54a6311-1561-484a-b250-ab39f2e8dd55", "ts": "2026-01-25T18:43:54.074387Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "f54a6311-1561-484a-b250-ab39f2e8dd55", "ts": "2026-01-25T18:43:56.278708Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question about campus access badge"}}}
+{"run_id": "f54a6311-1561-484a-b250-ab39f2e8dd55", "ts": "2026-01-25T18:43:56.281078Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "f54a6311-1561-484a-b250-ab39f2e8dd55", "ts": "2026-01-25T18:43:56.281268Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "f54a6311-1561-484a-b250-ab39f2e8dd55", "ts": "2026-01-25T18:43:56.281664Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "f54a6311-1561-484a-b250-ab39f2e8dd55", "ts": "2026-01-25T18:43:56.281763Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

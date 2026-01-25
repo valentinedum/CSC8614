@@ -1,0 +1,8 @@
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:07.092200Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.824829Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question non-spécifique de l'établissement. Réponse peut être donnée sans vérification supplémentaire."}}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.827235Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.827514Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.828518Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.828797Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.830321Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "0d84be02-bddd-4fbf-9b42-bf647022ba57", "ts": "2026-01-25T19:00:09.830587Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}

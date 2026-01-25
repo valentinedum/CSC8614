@@ -1,0 +1,6 @@
+{"run_id": "0db3751f-3323-44e9-8e20-953e3cccecfb", "ts": "2026-01-25T18:52:18.961891Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "0db3751f-3323-44e9-8e20-953e3cccecfb", "ts": "2026-01-25T18:52:21.520752Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email demandant mise à jour de coordonnées personnelles pour le registre du labo."}}}
+{"run_id": "0db3751f-3323-44e9-8e20-953e3cccecfb", "ts": "2026-01-25T18:52:21.523264Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "0db3751f-3323-44e9-8e20-953e3cccecfb", "ts": "2026-01-25T18:52:21.523537Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "0db3751f-3323-44e9-8e20-953e3cccecfb", "ts": "2026-01-25T18:52:21.524644Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "0db3751f-3323-44e9-8e20-953e3cccecfb", "ts": "2026-01-25T18:52:21.524936Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
