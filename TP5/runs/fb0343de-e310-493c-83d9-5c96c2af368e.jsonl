@@ -1,0 +1,2 @@
+{"run_id": "fb0343de-e310-493c-83d9-5c96c2af368e", "ts": "2026-01-27T21:16:02.074880Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "fb0343de-e310-493c-83d9-5c96c2af368e", "ts": "2026-01-27T21:16:02.075121Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "clarification"}}

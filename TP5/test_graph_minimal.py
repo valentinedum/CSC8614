@@ -7,7 +7,7 @@ from TP5.agent.graph_minimal import build_graph
 
 if __name__ == "__main__":
     emails = load_all_emails()
-    e = emails[0]
+    e = emails[8]  # E09 - prompt injection (attendu: escalate)  
 
     state = AgentState(
         run_id=str(uuid.uuid4()),
@@ -24,6 +24,9 @@ if __name__ == "__main__":
     print(out["decision"].model_dump_json(indent=2))
     print("\n=== DRAFT_V1 ===")
     print(out["draft_v1"])
+    print("\n=== FINAL ===")
+    print("kind =", out["final_kind"])
+    print(out["final_text"])
     print("\n=== ACTIONS ===")
     print(out["actions"])
   

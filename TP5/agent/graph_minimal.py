@@ -14,6 +14,7 @@ from TP5.agent.nodes.maybe_retrieve import maybe_retrieve
 from TP5.agent.nodes.draft_reply import draft_reply
 from TP5.agent.nodes.check_evidence import check_evidence
 from TP5.agent.nodes.rewrite_query import rewrite_query
+from TP5.agent.nodes.finalize import finalize
 
 def build_graph():
     g = StateGraph(AgentState)
@@ -26,6 +27,7 @@ def build_graph():
     g.add_node("maybe_retrieve", maybe_retrieve)
     g.add_node("check_evidence", check_evidence)
     g.add_node("rewrite_query", rewrite_query)
+    g.add_node("finalize", finalize)
     
 
     g.set_entry_point("classify_email")  # TODO: point d'entrée
@@ -55,14 +57,15 @@ def build_graph():
         return "end"
 
     g.add_conditional_edges("check_evidence", after_check, {
-        "end": END,
+        "end": "finalize",
         "rewrite": "rewrite_query",
     })
     
-    # TODO: chaque branche termine le graphe
+    # Toutes les branches terminent par finalize avant END
     g.add_edge("rewrite_query", "maybe_retrieve")
-    g.add_edge("ask_clarification", END)
-    g.add_edge("escalate", END)
-    g.add_edge("ignore", END)
+    g.add_edge("ask_clarification", "finalize")
+    g.add_edge("escalate", "finalize")
+    g.add_edge("ignore", "finalize")
+    g.add_edge("finalize", END)
 
     return g.compile()

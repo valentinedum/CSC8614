@@ -36,6 +36,12 @@ def call_llm(prompt: str) -> str:
 def rewrite_query(state: AgentState) -> AgentState:
     log_event(state.run_id, "node_start", {"node": "rewrite_query"})
 
+    if not state.budget.can_step():
+        log_event(state.run_id, "node_end", {"node": "rewrite_query", "status": "budget_exceeded"})
+        return state
+
+    state.budget.steps_used += 1
+
     q1 = state.decision.retrieval_query.strip() or state.body[:200]
     prompt = REWRITE_PROMPT.format(
         subject=state.subject,
@@ -56,7 +62,7 @@ def rewrite_query(state: AgentState) -> AgentState:
         state.add_error("rewrite_query: empty rewrite")
 
     state.decision.retrieval_query = q2
+    state.decision.needs_retrieval = True  # Forcer le retrieval au prochain cycle
 
     log_event(state.run_id, "node_end", {"node": "rewrite_query", "status": "ok", "q2": state.decision.retrieval_query})
     return state
-  

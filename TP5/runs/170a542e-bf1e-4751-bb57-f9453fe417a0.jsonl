@@ -1,0 +1,11 @@
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:51.707697Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E02"}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:54.820603Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "description cours deep learning objectifs", "rationale": "Question identifiée sur les absences médicales et sanctions dans le contexte d'un cours de Deep Learning"}}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:54.823436Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:54.875980Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "5af86447634f", "latency_ms": 52, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:54.876779Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:54.877596Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:57.665107Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:57.667123Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:57.667564Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:57.669444Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "170a542e-bf1e-4751-bb57-f9453fe417a0", "ts": "2026-01-28T17:29:57.669809Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

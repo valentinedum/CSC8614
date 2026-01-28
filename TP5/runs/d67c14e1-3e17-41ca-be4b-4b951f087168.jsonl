@@ -1,0 +1,11 @@
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:29:57.673474Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E03"}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:00.941911Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "description cours FISE inscription", "rationale": "Question sur les documents à fournir pour finaliser l'inscription au cycle d'ingénieur FISE"}}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:00.942887Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:01.035637Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "6b191f70989e", "latency_ms": 92, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:01.040999Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:01.044184Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:08.415889Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:08.416956Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:08.417177Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:08.418153Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "d67c14e1-3e17-41ca-be4b-4b951f087168", "ts": "2026-01-28T17:30:08.418381Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

@@ -1,0 +1,17 @@
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:04.708600Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:07.336649Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Request for personal contact information update for administrative purposes."}}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:07.339472Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:07.339984Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:07.341434Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:13.142699Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:13.144177Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:13.144542Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:13.146162Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:14.767105Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Update contact details for lab register - Personal Information: \n\nTelephone number:\nEmail:\nAddress:\nStudent file number:"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:14.768652Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:15.098898Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "e4509a075e67", "latency_ms": 329, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:15.100114Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:15.100934Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:19.618477Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:19.619805Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "dc817d26-2f0c-40ac-8577-c27b99ce26ab", "ts": "2026-01-27T21:01:19.619993Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}

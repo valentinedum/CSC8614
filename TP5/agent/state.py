@@ -47,7 +47,7 @@ class Budget(BaseModel):
     steps_used: int = 0
     max_tool_calls: int = 6
     tool_calls_used: int = 0
-    max_retrieval_attempts: int = 3
+    max_retrieval_attempts: int = 2
     retrieval_attempts: int = 0
 
     def can_step(self) -> bool:
@@ -75,6 +75,10 @@ class AgentState(BaseModel):
     draft_v1: str = ""
     draft_v2: str = ""
     last_draft_had_valid_citations: bool = False
+
+    # Champs pour finalize
+    final_text: str = ""
+    final_kind: str = ""  # reply / clarification / handoff / ignore
 
     actions: List[Dict[str, Any]] = Field(default_factory=list)   # actions mockées
     errors: List[str] = Field(default_factory=list)

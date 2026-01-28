@@ -1,0 +1,9 @@
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:28.197734Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E06"}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:31.296285Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "document que je vous ai demandé hier", "rationale": "Question concernant un document nécessaire pour le dossier de l'équipe."}}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:31.298917Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:31.509155Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "7079bc352e38", "latency_ms": 209, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:31.509968Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:31.510628Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:36.076811Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:36.078405Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "854d9df8-3a1f-48d2-959a-5b1ff5b9cc3c", "ts": "2026-01-25T19:14:36.078793Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}

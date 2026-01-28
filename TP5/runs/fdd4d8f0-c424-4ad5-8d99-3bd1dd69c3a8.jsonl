@@ -1,0 +1,19 @@
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:25:52.665701Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E08"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:25:55.553499Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 1, "risk_level": "high", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email apparentement dangereux demandant la réinitialisation du mot de passe"}}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:25:55.555333Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:25:55.555688Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:25:55.557032Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:00.293887Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:00.295150Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:00.295355Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:00.296229Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:01.059871Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Telecom cloud password reset alert"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:01.060727Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:01.112467Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "c184170c67c0", "latency_ms": 51, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:01.113483Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:01.114304Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:06.588633Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:06.590752Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:06.591107Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:06.592664Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "fdd4d8f0-c424-4ad5-8d99-3bd1dd69c3a8", "ts": "2026-01-27T21:26:06.592986Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

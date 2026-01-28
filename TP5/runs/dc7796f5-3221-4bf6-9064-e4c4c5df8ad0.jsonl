@@ -1,0 +1,11 @@
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:08.420279Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E04"}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:11.172677Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "description cours ethique AI", "rationale": "Question technique identifiée concernant le respect de la charte IA pour un projet."}}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:11.173495Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:11.210958Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "d62d7040a8e3", "latency_ms": 37, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:11.211750Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:11.212396Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:15.147462Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:15.148257Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:15.148379Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:15.148961Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "dc7796f5-3221-4bf6-9064-e4c4c5df8ad0", "ts": "2026-01-28T17:30:15.149074Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

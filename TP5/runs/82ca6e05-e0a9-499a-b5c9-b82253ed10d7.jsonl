@@ -1,0 +1,3 @@
+{"run_id": "82ca6e05-e0a9-499a-b5c9-b82253ed10d7", "ts": "2026-01-25T19:19:31.420611Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "82ca6e05-e0a9-499a-b5c9-b82253ed10d7", "ts": "2026-01-25T19:19:34.147730Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "badge access campus description", "rationale": "Question about lost ID badge and its replacement."}}}
+{"run_id": "82ca6e05-e0a9-499a-b5c9-b82253ed10d7", "ts": "2026-01-25T19:19:34.149929Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}

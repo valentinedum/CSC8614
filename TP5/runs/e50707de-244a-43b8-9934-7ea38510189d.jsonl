@@ -1,0 +1,11 @@
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:48.634690Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E02"}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:52.849703Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "description cours de la semaine prochaine de Mme Weber", "rationale": "Requête concernant l'absence d'une étudiante pour le cours suivant nécessite de vérifier les détails de la session."}}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:52.850782Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:52.961549Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "aa7b783bc5bb", "latency_ms": 110, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:52.962567Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:52.963396Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:57.329073Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:57.330725Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:57.331111Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:57.332503Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "e50707de-244a-43b8-9934-7ea38510189d", "ts": "2026-01-27T21:24:57.332871Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

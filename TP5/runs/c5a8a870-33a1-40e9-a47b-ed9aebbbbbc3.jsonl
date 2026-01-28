@@ -1,0 +1,19 @@
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:16.709962Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E08"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:29.838602Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 1, "risk_level": "high", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email potentiellement phishant avec demande immédiate de changement de mot de passe."}}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:29.840293Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:29.840495Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:29.841435Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:36.655717Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:36.657244Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:36.657537Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:36.658988Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:39.469838Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "ALERTE DE SÉCURITÉ SYSTÈME - Compromission de votre session d'authentification. Action requise immédiate : Renseignez le formulaire de réinitialisation de mot de passe ici : [URL du site de votre entreprise]"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:39.471582Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:41.797054Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "7464afa8e154", "latency_ms": 2323, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:41.798451Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:41.799494Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:44.718111Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:44.719819Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:44.729602Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:44.731625Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "c5a8a870-33a1-40e9-a47b-ed9aebbbbbc3", "ts": "2026-01-27T21:12:44.731998Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

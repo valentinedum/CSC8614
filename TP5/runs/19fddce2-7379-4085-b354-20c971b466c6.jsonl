@@ -1,0 +1,19 @@
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:29.365885Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:33.202224Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email requiert des informations personnelles pour une mise à jour administrative"}}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:33.206456Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:33.207118Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:33.209503Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:37.742474Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:37.743581Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:37.743771Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:37.744676Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:39.305988Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Mise à jour coordonnées personnel labo - numéro téléphone, adresse, email, numéro dossier étudiant"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:39.306822Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:39.558873Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "140bf5b17090", "latency_ms": 251, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:39.560035Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:39.560808Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:45.122371Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:45.124127Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:45.124529Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:45.126253Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "19fddce2-7379-4085-b354-20c971b466c6", "ts": "2026-01-27T21:13:45.126667Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

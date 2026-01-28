@@ -1,0 +1,19 @@
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:38.841386Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:41.595282Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Request for updating personal contact information for administrative purposes."}}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:41.596819Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:41.597347Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:41.598617Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:45.440105Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:45.442190Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:45.442569Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:45.444228Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:47.170144Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Mise à jour coordonnées personnelles - Registre labo : numéro de téléphone personnel, adresse complète, email personnel, numéro d'étudiant"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:47.172358Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:47.299267Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "6a70ec22ee06", "latency_ms": 126, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:47.300420Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:47.301468Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:52.657320Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:52.659969Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:52.660237Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:52.661292Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "436cf4e8-5d2d-45a5-8f30-61f2623834e3", "ts": "2026-01-27T21:25:52.661559Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

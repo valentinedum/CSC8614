@@ -1,0 +1,2 @@
+{"run_id": "77b060be-cbdb-401c-a483-e92cc86d5aec", "ts": "2026-01-27T21:16:02.074054Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "77b060be-cbdb-401c-a483-e92cc86d5aec", "ts": "2026-01-27T21:16:02.074313Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "handoff"}}

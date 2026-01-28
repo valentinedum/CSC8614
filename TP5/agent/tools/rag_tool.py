@@ -40,6 +40,16 @@ def rag_search_tool(run_id: str, query: str, k: int = 5, filters: Optional[Dict[
     args = {"query": query, "k": k, "filters": filters}
     args_hash = _hash_args(args)
 
+    if (not query.strip()) or (k > 10):
+        log_event(run_id, "tool_call", {
+            "tool": "rag_search",
+            "args_hash": args_hash,
+            "latency_ms": int((time.time() - t0) * 1000),
+            "status": "error",
+            "error": "invalid_args"
+        })
+        return []
+
     try:
         emb = OllamaEmbeddings(base_url=f"http://127.0.0.1:{PORT}", model=EMBEDDING_MODEL)
         vectordb = Chroma(
@@ -81,4 +91,3 @@ def rag_search_tool(run_id: str, query: str, k: int = 5, filters: Optional[Dict[
             "error": str(e),
         })
         return []
-  

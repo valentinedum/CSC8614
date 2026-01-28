@@ -11,6 +11,12 @@ def maybe_retrieve(state: AgentState) -> AgentState:
         log_event(state.run_id, "node_end", {"node": "maybe_retrieve", "status": "skipped"})
         return state
 
+    if not state.budget.can_step():
+        log_event(state.run_id, "node_end", {"node": "maybe_retrieve", "status": "budget_exceeded"})
+        return state
+
+    state.budget.steps_used += 1
+
     # TODO: respecter le budget
     if not state.budget.can_call_tool() or not state.budget.can_retrieve():
         state.add_error("Budget retrieval/tool dépassé")
@@ -37,4 +43,3 @@ def maybe_retrieve(state: AgentState) -> AgentState:
         "n_docs": len(state.evidence),
     })
     return state
-  
