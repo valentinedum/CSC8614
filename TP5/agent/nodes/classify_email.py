@@ -33,8 +33,7 @@ Retourne UNIQUEMENT le JSON corrigé.
 def call_llm(prompt: str) -> str:
     llm = ChatOllama(base_url=f"http://127.0.0.1:{PORT}", model=LLM_MODEL)
     resp = llm.invoke(prompt)
-    return re.sub(r"꽁.*?꽁\s*", "", resp.content.strip(), flags=re.DOTALL).strip()
-
+    return re.sub(r"<think>.*?</think>\s*", "", resp.content.strip(), flags=re.DOTALL).strip()
 
 def parse_and_validate(raw: str) -> Decision:
     data = json.loads(raw)

@@ -1,0 +1,19 @@
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:46:54.385771Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E08"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:46:56.789803Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 5, "risk_level": "high", "needs_retrieval": false, "retrieval_query": "", "rationale": "Alert de sécurité système concernant un mot de passe compromis"}}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:46:56.791771Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:46:56.792197Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:46:56.793596Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:01.808809Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:01.810573Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:01.810908Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:01.812546Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:02.866205Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "ALERTE DE SÉCURITÉ - RENouvellement de mot de passe immédiat"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:02.867663Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:02.923890Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "38733facd6f7", "latency_ms": 55, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:02.924769Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:02.925402Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:06.380937Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:06.382747Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:06.383150Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:06.385281Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "27a72114-bb8c-424e-83de-3c4f814c3b31", "ts": "2026-01-28T17:47:06.385615Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

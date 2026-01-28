@@ -1,0 +1,19 @@
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:28.652895Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E05"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:31.384022Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "The email discusses a technical issue related to the submission of a programming assignment and requires a verification."}}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:31.385827Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:31.386094Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:31.387205Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:35.281280Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:35.282194Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:35.282362Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:35.284513Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:36.489553Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "vérification des dépendances pour TP3 (Tokenizer et Language Model) : completé requirements.txt ?"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:36.491816Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:36.601550Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "5506472913e7", "latency_ms": 109, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:36.602585Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:36.603407Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:40.824824Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:40.826185Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:40.826404Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:40.827399Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "d124fb0f-fd29-43c2-953b-0392d7bd74d2", "ts": "2026-01-28T17:51:40.827609Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

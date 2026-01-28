@@ -1,0 +1,11 @@
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:40.829518Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E06"}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:44.175115Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "Le document demandé par M. Inconnu est-il dans le courrier sur le cours de deep learning ?", "rationale": "Question relative au statut d'un document requis pour un cours."}}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:44.178528Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:44.251837Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "01085ed54a88", "latency_ms": 72, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:44.252762Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:44.253402Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:48.367344Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:48.369086Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:48.369400Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:48.371088Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "324239b1-a4fb-48b5-bd52-a06c5ecede5d", "ts": "2026-01-28T17:51:48.371400Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

@@ -1,0 +1,19 @@
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:48.374331Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:50.510175Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Request for personal contact details for administrative purposes."}}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:50.512645Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:50.513016Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:50.514588Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:54.963619Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:54.965427Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:54.965725Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:54.967443Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:57.425144Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Update personal contact details for lab registry - Assistant Admin <asst.admin@telecom-sudparis.eu>\n\nPlease provide the following updated information:\n- Personal phone number\n- Complete home address\n- Personal email\n- Student ID number\nThese details will be used internally only for administrative follow-ups"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:57.426731Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:57.478828Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "77af08a9eab7", "latency_ms": 51, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:57.479719Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:51:57.480372Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:52:01.633745Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:52:01.635920Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:52:01.636328Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:52:01.637923Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "173ec16b-a13d-42f2-b5b4-c32909b7bcc2", "ts": "2026-01-28T17:52:01.638360Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

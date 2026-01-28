@@ -1,0 +1,19 @@
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:36.119230Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:50.905598Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "other", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question about campus access badge."}}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:50.907231Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:50.907425Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:50.908155Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:55.631704Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:55.632961Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:55.633197Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:55.634413Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:56.543636Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Obtenir un nouveau badge campus - Coût et temps requis"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:56.545545Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:58.688138Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "12498a734290", "latency_ms": 2142, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:58.690518Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:45:58.691235Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:46:03.424466Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:46:03.426979Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:46:03.427364Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:46:03.429228Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "b5a45669-2437-47e8-8437-0e6791881d97", "ts": "2026-01-28T17:46:03.429703Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

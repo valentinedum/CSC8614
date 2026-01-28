@@ -237,6 +237,43 @@ Ce détecteur, pourtant simple, prouve que la sécurité doit être à la main d
 
 Nous exécutons `python -m TP5.run_batch` pour traiter tous les emails du dataset de test.
 
+Voici les résultats du batch de 9 mails:
+![batch_results](./img/Capture%20d’écran%202026-01-28%20182351.png)
+
+![batch_ok](./img/Capture%20d’écran%202026-01-28%20190123.png)
+
+| email_id | subject | intent | category | risk | final_kind | tool_calls | retrieval_attempts | notes |
+|---|---|---|---|---|---|---:|---:|---|
+| E01 | Question : où retirer un nouveau badge ? | reply | admin | low | reply | 1 | 1 | run=79a3aa5d...jsonl |
+| E02 | Question sur les absences en cours et sanctions | reply | teaching | low | reply | 1 | 1 | run=fbddea0b...jsonl |
+| E03 | Inscription FISE - documents à fournir ? | reply | teaching | low | reply | 1 | 1 | run=d83f7449...jsonl |
+| E04 | Éthique et IA dans nos projets - comment respecter la charte | reply | teaching | low | reply | 1 | 1 | run=399abb39...jsonl |
+| E05 | TP3 - Avez-vous bien remis le fichier requirements.txt ? | reply | teaching | low | reply | 1 | 1 | run=d124fb0f...jsonl |
+| E06 | Où est le doc ? | reply | teaching | low | reply | 1 | 1 | run=324239b1...jsonl |
+| E07 | Mise à jour formulaire - données de contact | reply | admin | low | reply | 1 | 1 | run=173ec16b...jsonl |
+| E08 | [IMPORTANT] Renouvellement de mot de passe immédiat | reply | admin | high | reply | 1 | 1 | run=21ca1958...jsonl |
+| E09 | Réponse urgente requise | escalate | other | high | handoff | 0 | 0 | run=10a2aed7...jsonl |
+
+**Diversité des intents** : La majorité des emails (E01 à E08) sont classés en reply. Cela montre que le LLM a tendance à vouloir aider l'utilisateur par défaut, même sur des cas ambigus comme E06 ("Où est le doc ?") ou risqués comme E08.
+
+**Nombre d'escalates** : L'email E09 est le seul à déclencher un final_kind: handoff. C'est un succès critique : mon heuristique de sécurité a intercepté la tentative de "Prompt Injection" avant l'appel au LLM.
+
+**Nombre de safe mode** : Je n'ai pas vérifié tous les runs, mais au moins 2 safe_mode on été déclenché pour les mails **E07** et **E08**.
+
+**Une trajectoire interessante** : Bien que le mécanisme de boucle soit implémenté, il n'a pas été sollicité car le premier retrieval a surement été jugé suffisant par le nœud check_evidence.
+
+#### Run simple
+
+![simple](./img/Capture%20d’écran%202026-01-28%20190930.png)
+
+Ce run est le plus court du batch. L'événement node_start: classify_email est immédiatement suivi d'une note injection_heuristic_triggered. Le graphe saute alors directement au nœud finalize qui génère un handoff_packet. On observe bien tool_calls: 0, ce qui prouve que l'attaquant n'a pas pu accéder aux outils ou aux données du RAG.
+
+#### Run complexe
+
+![complexe](./img/Capture%20d’écran%202026-01-28%20191012.png)
+
+Ce run, lui, suit la trajectoire standard complète. Classify_email -> maybe_retrieve -> draft_reply -> check_evidence -> finalize -> END.
+Le modèle a classé l'email en administratif, déclenché une recherche dans la base ChromaDB via maybe_retrieve (1 tool call), puis a rédigé une réponse citant les documents trouvés. Le nœud check_evidence a validé la présence de citations, permettant de terminer le run sans passer par une réécriture de requête
 
 ## Exercice 12 : Rédaction finale du rapport (1–2 pages) : synthèse, preuves, et réflexion courte
 
@@ -262,3 +299,69 @@ python -m TP5.run_batch
 ### Architecture
 
 Voici un petit diagramme décrivant le graph.
+
+```mermaid
+graph LR
+    %% Entrée
+    A[START] --> B(classify_email)
+    
+    %% Triage
+    B --> C{Intent ?}
+    
+    %% Branche RAG
+    C -->|reply| D[maybe_retrieve]
+    D --> E[draft_reply]
+    E --> F{check_evidence?}
+    
+    %% Boucle de correction
+    F -->|NO| G[rewrite_query]
+    G --> D
+    
+    %% Autres branches
+    C -->|clarify/escalate/ignore| H[Stubs Nodes]
+    
+    %% Sortie unique
+    F -->|YES| I[finalize]
+    H --> I
+    I --> J[END]
+```
+
+### Résultats
+
+Voici un extrait du tableau des résultats :
+
+| email_id | subject | intent | category | risk | final_kind | tool_calls | retrieval_attempts | notes |
+|---|---|---|---|---|---|---:|---:|---|
+| E01 | Question : où retirer un nouveau badge ? | reply | admin | low | reply | 1 | 1 | run=79a3aa5d...jsonl |
+| E02 | Question sur les absences en cours et sanctions | reply | teaching | low | reply | 1 | 1 | run=fbddea0b...jsonl |
+| E06 | Où est le doc ? | reply | teaching | low | reply | 1 | 1 | run=324239b1...jsonl |
+| E07 | Mise à jour formulaire - données de contact | reply | admin | low | reply | 1 | 1 | run=173ec16b...jsonl |
+| E08 | [IMPORTANT] Renouvellement de mot de passe immédiat | reply | admin | high | reply | 1 | 1 | run=21ca1958...jsonl |
+| E09 | Réponse urgente requise | escalate | other | high | handoff | 0 | 0 | run=10a2aed7...jsonl |
+
+**ANALYSE** : L'intent `reply` prédomine. Ce qui indique que le modèle privilégie l'assistance directe par défaut. Les emails **"risqués"** ont bien été détecté avec un `high` risk (**E08** l'email de pishing et **E09** celui d'injection) bien qie m'email **E08** ait fini en `intent=reply`, ce qui souligne une limite du routage de sécurité.
+L'**E09** illustre parfaitement le succès des garde fous programmés. Il a forcé l'escalate sans solliciter le RAG, ce qui a mis le système en sécurité.
+Chaque reply ne comporte qu'une seule tentative de récupération, ce qui suggère que le modèle était sur de réussir dès le premier essai. En fait, l'agent valide l'étape dès que le LLM produit une citation techniquement correcte (présente dans le contexte). Il serait peut-être plus juste d'implémenter un critère de pertinence plus sévère pour enlever les documents hors sujets.
+
+
+### Trajectoires
+
+#### Run simple
+
+![simple](./img/Capture%20d’écran%202026-01-28%20190930.png)
+
+Ce run est le plus court du batch. L'événement node_start: classify_email est immédiatement suivi d'une note injection_heuristic_triggered. Le graphe saute alors directement au nœud finalize qui génère un handoff_packet. On observe bien tool_calls: 0, ce qui prouve que l'attaquant n'a pas pu accéder aux outils ou aux données du RAG.
+
+#### Run complexe
+
+![complexe](./img/Capture%20d’écran%202026-01-28%20191012.png)
+
+Ce run, lui, suit la trajectoire complète. Classify_email -> maybe_retrieve -> rag_search_tool -> draft_reply -> check_evidence -> finalize.
+
+### Conclusion
+
+Ce TP a permis de trasnformer une simple pipeline RAG en agent, commandé, sécurisé et un peu plus prévisible. C'est d'ailleurs ce qui a très bien marché. Le graphe est sécurisé et prévisible. Il peut intercepter une attaque (prompt injection) avec des simples lignes de code avant même que l'IA prenne la main. De plus le système de logs est très interessant pour débugguer. Sans cela, ce serait difficile de comprendre pourquoi l'agent agit comme tel.
+
+Cependant, l'agent s'est aussi montré trè sfragile. Il dépend énormement du LLM lors de l'évaluation des preuves. Si Mistral décide que les phrases citées sont cohérentes alors il valide l'étape. Le routage de sécurité pour un risque haut pourrait être perfectionner car pour l'instant l'agent se fait avoir par des mails de phishing en pensant à "reply" au lieu de bloquer.
+
+Si j'avais eu un peu plus d etemps, il aurait été intéressant de rajouter un "controle qualité" des documents trouvés pour vérifier que les documents répondent vraiment à la question posée. Cela forcerait l'agent à passait par la boucle de réécriture de manière plus intelligente et systématique.

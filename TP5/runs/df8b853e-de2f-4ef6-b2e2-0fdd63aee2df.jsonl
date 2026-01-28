@@ -1,0 +1,19 @@
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:25.945992Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E05"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:28.925295Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "teaching", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Question about the TP3 assignment, specifically checking if the requirements.txt file is complete and if there are any updates to the Python files."}}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:28.926464Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:28.926657Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:28.927291Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:33.350494Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:33.351820Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:33.352048Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:33.353104Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:34.216990Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "TP3 - Verification des fichiers Python et du requirements.txt"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:34.219785Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:34.326531Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "ec3bbddd86b5", "latency_ms": 106, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:34.327557Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:34.328253Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:37.055834Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:37.058220Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:37.058617Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:37.060906Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "df8b853e-de2f-4ef6-b2e2-0fdd63aee2df", "ts": "2026-01-28T17:46:37.061336Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

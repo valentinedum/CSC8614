@@ -1,0 +1,19 @@
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:01.641284Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E08"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:04.676911Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 5, "risk_level": "high", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email de type phishing demandant la réinitialisation du mot de passe. Il est important de vérifier si cette action a été demandée."}}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:04.679337Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:04.679688Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:04.680983Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:09.068570Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:09.070365Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:09.070691Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:09.072232Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:10.143328Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "ALERTE DE SÉCURITÉ SYSTEM - Compromission de votre mot de passe"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:10.144797Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:10.188047Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "b127f33b478c", "latency_ms": 42, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:10.188868Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:10.189465Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:16.315715Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:16.317359Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:16.317677Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:16.319717Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "21ca1958-9af0-476d-800b-0520ca060259", "ts": "2026-01-28T17:52:16.320628Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

@@ -1,0 +1,19 @@
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:43.070165Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:45.169257Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 2, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "Request for personal information update."}}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:45.171091Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:45.171414Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "skipped"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:45.172557Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:48.979193Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:48.981015Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:48.981339Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 0}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:48.982662Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:50.592504Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "Mettre à jour coordonnées : Numéro de téléphone personnel, Adresse personnelle complète, Email personnel, Numéro d'étudiant - pour le registre du labo"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:50.594332Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:50.650754Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "3fac3201017a", "latency_ms": 56, "status": "ok", "k": 3, "n_docs": 3}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:50.651713Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 3}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:50.652482Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:54.378813Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:54.380688Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:54.381048Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:54.382513Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "a150c874-2266-4935-9454-f107e94245c3", "ts": "2026-01-28T17:46:54.382800Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}
